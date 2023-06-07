@@ -29,7 +29,7 @@ Make sure you have the [Docker Desktop](https://www.docker.com/products/docker-d
 
 3. Start the MongoDB database and API server using Docker Compose:
    ```sh
-   docker-compose up
+   docker compose up
    ```
    This command will spin up a MongoDB container, an Nginx container acting as a reverse proxy, and the Fastify API server container. The API server will be accessible at http://localhost:3333.
 
