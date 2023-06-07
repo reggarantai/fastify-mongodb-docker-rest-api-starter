@@ -1,13 +1,13 @@
 {
-  "name": "fastify-api-auth-docker-starter",
+  "name": "fastify-mongodb-docker-rest-api-starter",
   "version": "1.0.0",
-  "description": "REST API authentication and authorization using Fastify and MonggoDB with Docker",
+  "description": "A starter for building a RESTful API using Fastify, MongoDB, Nginx, and Mongoose in a Docker container.",
   "main": "src/server.js",
   "author": "Regga @reggarantai <coding@reggarantai.com>",
   "license": "0BSD",
   "repository": {
     "type": "git",
-    "url": "https://github.com/reggarantai/fastify-api-auth-docker-starter"
+    "url": "https://github.com/reggarantai/fastify-mongodb-docker-rest-api-starter"
   },
   "keywords": [
     "Fastify",
