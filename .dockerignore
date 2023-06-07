@@ -1,0 +1,7 @@
+.DS_Store
+Dockerfile
+Dockerfile.dev
+docker-composer.yaml
+package-lock.json
+node_modules
+.nyc_output

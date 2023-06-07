@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome</title>
+  <style>
+    body {
+      padding: 0;
+      font-size: 0.95rem;
+    }
+    main {
+      background: linear-gradient(-45deg, #f5f5f5, transparent);
+      height: 100vh;
+      width: 100vw;
+      position: fixed;
+      top: 0;
+      left: 0;
+      overflow: auto;
+    }
+    article {
+      max-width:770px;margin:auto;
+      padding-top: 40px;
+      padding-bottom: 80px;
+    }
+    h1 {
+      font-size: 2.8rem;
+      color: #000;
+    }
+    h2 {
+      font-size: 1.4rem;
+      margin-top: 80px;
+    }
+    p {
+      line-height: 1.9;
+      opacity: 0.65;
+      font-size: 1.2rem;
+    }
+    table {
+      width:100%;border: 0;border-collapse: collapse;
+      margin-bottom: 2rem;
+    }
+    th {
+      color: white;
+      background-color: #555;
+      font-size: 70%;
+      letter-spacing: 1px;
+    }
+    td {
+      background-color: #f5f5f5;
+    }
+    tr:nth-of-type(even) td {
+      background-color: #ececec;
+    }
+    td:nth-child(2) {
+      white-space: nowrap;
+    }
+    th, td {
+      padding: 8px 15px;
+      text-align: left;
+      border: 1px solid #fff;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <article class="markdown-body entry-content container-lg" itemprop="text">
+      <h1 tabindex="-1" dir="auto">
+        Fastify-MongoDB-Docker<br/>REST API Starter
+      </h1>
+      <p dir="auto">A starter for building a RESTful API using Fastify, MongoDB, Nginx, and Mongoose in a Docker container. It aims to provide a solid foundation for developing scalable and efficient API services with the added benefit of Nginx as a reverse proxy.</p>
+      <h2 tabindex="-1" dir="auto">
+        Endpoints
+      </h2>
+      <p>Open your favorite API testing tool (e.g., Postman) and start making requests to the API endpoints.</p>
+        <table>
+          <thead>
+            <tr>
+              <th>DESC</th>
+              <th>URL</th>
+              <th>METHOD</th>
+              <th>PAYLOAD</th>
+              <th>HEADER</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Register user</td>
+              <td>/users/register</td>
+              <td>POST</td>
+              <td>
+<pre>
+{
+  "username": String,
+  "password": String
+}
+</pre>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Login</td>
+              <td>/users/login</td>
+              <td>POST</td>
+              <td>
+<pre>
+{
+  "username": String,
+  "password": String
+}
+</pre>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Get all users</td>
+              <td>/users</td>
+              <td>GET</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Get user<br/>by id</td>
+              <td>/users/:id</td>
+              <td>GET</td>
+              <td></td>
+              <td>Authorization:<br/>Bearer {JWT}</td>
+            </tr>
+            <tr>
+              <td>Update user<br/>by id</td>
+              <td>/users/:id</td>
+              <td>PUT</td>
+              <td>
+<pre>
+{
+  "username": String,
+  "password": String
+}
+</pre>
+              </td>
+              <td>Authorization:<br/>Bearer {JWT}</td>
+            </tr>
+            <tr>
+              <td>Delete user<br/>by id</td>
+              <td>/users/:id</td>
+              <td>DELETE</td>
+              <td></td>
+              <td>Authorization:<br/>Bearer {JWT}</td>
+            </tr>
+          </tbody>
+        </table>
+      <p dir="auto">
+        Happy coding! Hope this can be a starting point to build your awesome projects.<br/><br/>
+        Sincerely,<br/>
+        Regga
+      </p>
+      </article>
+  </main>
+</body>
+</html>

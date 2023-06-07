@@ -1,0 +1,42 @@
+{
+  "name": "fastify-api-auth-docker-starter",
+  "version": "1.0.0",
+  "description": "REST API authentication and authorization using Fastify and MonggoDB with Docker",
+  "main": "src/server.js",
+  "author": "Regga @reggarantai <coding@reggarantai.com>",
+  "license": "0BSD",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/reggarantai/fastify-api-auth-docker-starter"
+  },
+  "keywords": [
+    "Fastify",
+    "MonggoDB",
+    "Docker"
+  ],
+  "type": "module",
+  "dependencies": {
+    "@fastify/auth": "^4.3.0",
+    "@fastify/jwt": "^7.0.0",
+    "@fastify/static": "^6.10.2",
+    "@hapi/boom": "^10.0.1",
+    "bcryptjs": "^2.4.3",
+    "fastify": "^4.17.0",
+    "install": "^0.13.0",
+    "mongoose": "^7.2.2",
+    "npm": "^9.6.7",
+    "slug": "^8.2.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.42.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "nodemon": "^2.0.22",
+    "pino-pretty": "^10.0.0"
+  },
+  "scripts": {
+    "server": "node src/server.js",
+    "watch": "nodemon src/server.js",
+    "lint": "eslint ./src",
+    "lint-fix": "eslint ./src --fix"
+  }
+}
