@@ -1,7 +1,6 @@
 import {
   onRequestUser as onRequest,
   isValidObjectIdPreValidation,
-  isValidUserInputPreValidation,
   isUserAlreadyExists,
   registerUser,
   loginUser,
@@ -10,19 +9,25 @@ import {
   updateUser,
   deleteUser,
 } from '../controllers/userController.js';
+import {
+  userSchemaPost,
+  userSchemaLogin,
+  userSchemaPut,
+  userSchemaDelete,
+} from '../models/userSchema.js';
 
 const userRoutes = [
   {
     method: 'POST',
     url: '/users/register',
-    preValidation: isValidUserInputPreValidation,
+    schema: userSchemaPost,
     preHandler: isUserAlreadyExists,
     handler: registerUser,
   },
   {
     method: 'POST',
     url: '/users/login',
-    preValidation: isValidUserInputPreValidation,
+    schema: userSchemaLogin,
     handler: loginUser,
   },
   {
@@ -41,6 +46,7 @@ const userRoutes = [
   {
     method: 'PUT',
     url: '/users/:id',
+    schema: userSchemaPut,
     onRequest,
     preValidation: isValidObjectIdPreValidation,
     preHandler: isUserAlreadyExists,
@@ -49,6 +55,7 @@ const userRoutes = [
   {
     method: 'DELETE',
     url: '/users/:id',
+    schema: userSchemaDelete,
     onRequest,
     preValidation: isValidObjectIdPreValidation,
     handler: deleteUser,

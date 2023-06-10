@@ -66,26 +66,6 @@ const isValidObjectIdPreValidation = async (request, reply) => {
   }
 };
 
-// preValidation for check if contain valid user input body
-const isValidUserInputPreValidation = async (request, reply) => {
-  try {
-    const { username, password } = request.body;
-
-    if (!username || username.length < 5) {
-      reply.status(400).send({
-        message: 'Username must be at least 5 characters long!',
-      });
-    }
-    if (!password || password.length < 8) {
-      reply.status(400).send({
-        message: 'Password must be at least 8 characters long!',
-      });
-    }
-  } catch (err) {
-    throw boom.boomify(err);
-  }
-};
-
 // Check if user exists
 const isUserAlreadyExists = async (request, reply) => {
   try {
@@ -94,9 +74,17 @@ const isUserAlreadyExists = async (request, reply) => {
       username: slug(username),
     });
     if (usernameExists) {
-      reply.status(400).send({
-        message: 'Username already exists!',
-      });
+      if (request.params.id) {
+        if (usernameExists._id.valueOf() !== request.params.id) {
+          reply.status(400).send({
+            message: 'Username already exists!',
+          });
+        } 
+      } else {
+        reply.status(400).send({
+          message: 'Username already exists!',
+        });
+      }
     }
   } catch (err) {
     throw boom.boomify(err);
@@ -236,7 +224,6 @@ const deleteUser = async (request, reply) => {
 export {
   onRequestUser,
   isValidObjectIdPreValidation,
-  isValidUserInputPreValidation,
   isUserAlreadyExists,
   registerUser,
   loginUser,
