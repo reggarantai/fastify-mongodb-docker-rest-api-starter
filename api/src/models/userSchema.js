@@ -30,16 +30,6 @@ const defaultParams = {
   },
 };
 
-const defaultResponse = {
-  200: {
-    type: 'object',
-    properties: {
-      id: { type: 'string' },
-      username: { type: 'string' },
-    },
-  },
-};
-
 const bodyPost = {
   ...defaultBody,
   required: ['username', 'password'],
@@ -53,7 +43,16 @@ const userSchemaPost = {
   headers: headersAuth,
   params: defaultParams,
   body: bodyPost,
-  response: defaultResponse,
+  response: {
+    200: {
+      type: 'object',
+      properties: {
+        id: { type: 'string' },
+        username: { type: 'string' },
+        message: { type: 'string' },
+      },
+    },
+  },
 };
 
 const userSchemaLogin = {

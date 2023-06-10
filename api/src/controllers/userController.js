@@ -79,7 +79,7 @@ const isUserAlreadyExists = async (request, reply) => {
           reply.status(400).send({
             message: 'Username already exists!',
           });
-        } 
+        }
       } else {
         reply.status(400).send({
           message: 'Username already exists!',
@@ -112,6 +112,8 @@ const registerUser = async (request, reply) => {
     await user.save();
 
     reply.send({
+      id: user._doc._id,
+      username: user._doc.username,
       message: 'User registered successfully!',
     });
   } catch (err) {
